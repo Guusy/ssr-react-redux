@@ -10,12 +10,12 @@ function template(title, initialState = {}, content = "", entryName){
               <head>
                 <meta charset="utf-8">
                 <title> ${title} </title>
-                <link href="assets/style.css" rel="stylesheet">
+                <link href="assets/css/${entryName}.css" rel="stylesheet">
               </head>
               <body>
                 <div class="content">
                    <div id="app" class="wrap-inner">
-                      <!--- magic happens here -->  ${content}
+                      ${content}
                    </div>
                 </div>
                   ${scripts}

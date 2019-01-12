@@ -3,11 +3,6 @@ import { connect } from 'react-redux'
 
 class Test extends Component {
 
-  componentDidMount() {
-    console.log("las props son",this.props)
-  }
-
-
   render() {
     return (
        <div>

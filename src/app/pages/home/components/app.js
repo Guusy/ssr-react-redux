@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import { fetchAppsIfNeeded } from '../redux/actions'
-
-import Card from './card'
+import { fetchAppsIfNeeded } from '../../../../redux/actions'
+import '../home.scss';
+import Card from '../../../../components/card'
 
 
 class App extends Component {
