@@ -1,14 +1,10 @@
-function template(title, initialState = {}, content = ""){
+function template(title, initialState = {}, content = "", entryName){
   let scripts = '';
-  if(content){
-    scripts = ` <script>
+  scripts = ` <script>
                    window.__STATE__ = ${JSON.stringify(initialState)}
                 </script>
-                <script src="assets/client.js"></script>
+                <script src="assets/${entryName}.js"></script>
                 `
-  } else {
-    scripts = ` <script src="assets/bundle.js"> </script> `
-  }
   let page = `<!DOCTYPE html>
               <html lang="en">
               <head>

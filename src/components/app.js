@@ -11,7 +11,7 @@ class App extends Component {
     const { dispatch } = this.props
     dispatch(fetchAppsIfNeeded())
    // dispatch(fetchSwapiIfNeeded())
-
+    console.log("las props son",this.props)
   }
 
 
@@ -30,11 +30,12 @@ class App extends Component {
 }
  
 function mapStateToProps(state) {
-  const { isFetching, apps } = state
+  const { isFetching, apps, swapiData } = state
  
   return {
     isFetching,
-    apps
+    apps,
+    swapiData
   }
 }
  

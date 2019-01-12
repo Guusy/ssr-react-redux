@@ -18,14 +18,14 @@ const setIsFetching = (newValue) => {
 function receiveApps(newApps) {
   return {
     type: RECEIVE_APPS,
-    reducer: assignNewApps(newApps)
+    reducer: assignNewValue('apps',newApps)
   }
 }
-const assignNewApps = (newApps) => {
+const assignNewValue = (key,newValue) => {
   return (state) => {
     return Object.assign({}, state, {
       isFetching: false,
-      apps: newApps
+      [key]: newValue
     })
   }
 }
@@ -38,14 +38,14 @@ function fetchApps() {
       .then(json => dispatch(receiveApps(json)))
   }
 }
-/*function fetchSwapi(){
+function fetchSwapi(){
   return dispatch => {
     dispatch(requestSwapi())
     return fetch('https://swapi.co/api/people/1')
     .then(response => response.json())
-      .then(json => dispatch(receiveSwapi(json)))
+    .then(json => dispatch(receiveSwapi(json)))
   }
-}*/
+}
 
 function shouldFetchApps(state) {
   const apps = state.apps
